@@ -18,10 +18,13 @@
   },
   "scripts": {
     "start": "node .",
-    "start-db": "DB_HOST=localhost DB=test node ."
+    "start-db": "DB_HOST=localhost DB=test node .",
+    "test": "mocha test/*.test.js -b --timeout 3000"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "chai": "^4.1.0",
+    "mocha": "^3.4.2",
+    "supertest": "^3.0.0"
   },
   "dependencies": {
     "express": "^4.15.3",

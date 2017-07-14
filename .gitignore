@@ -4,6 +4,8 @@
 *.DS_Store*
 *.log
 *.orig
+*.swo
+*.swp
 
 node_modules/
 data/mongodb
