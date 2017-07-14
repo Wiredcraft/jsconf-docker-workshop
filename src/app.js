@@ -23,6 +23,11 @@ app.use('/people/count', (req, res) => {
   switch (req.method) {
     case 'GET':
       People.findOne().then(result => {
+        if (!result) {
+          return People.create({}).then(result => {
+            res.status(200).json({ count: result.count })
+          })
+        }
         res.status(200).json({ count: result.count })
       })
       break
@@ -41,9 +46,6 @@ mongoose.connect(`mongodb://${dbHost}:${dbPort}/${db}`, { useMongoClient: true }
   .on('error', console.log)
   .once('open', () => {
     app.listen(port, () => {
-      // TODO
-      // const People = mongoose.model('People')
-      // People.create({})
       console.log(`Listening on ${port}`)
     })
   })

@@ -1,5 +1,5 @@
 !.gitignore
-.dockerignore
+!.dockerignore
 
 *.DS_Store*
 *.log
