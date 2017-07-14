@@ -17,7 +17,8 @@
     "node": ">6.10.3"
   },
   "scripts": {
-    "start": "nodemon ."
+    "start": "node .",
+    "start-db": "DB_HOST=localhost DB=test node ."
   },
   "devDependencies": {
     "nodemon": "^1.11.0"
