@@ -11,9 +11,7 @@ services:
     ports:
       - "3007:3007"
     volumes:
-      - './mocks/profile/src:/opt/work/profile/'
+      - './mocks/profile:/opt/work/profile/'
     working_dir: '/opt/work/profile'
-    command: npm start
-    
-
+    command: drakov --config config.js
 
