@@ -52,5 +52,9 @@ exports.update = () => {
 }
 
 exports.removeAll = () => {
-  return People.remove({});
+  if (!isMonngoDBEnable()) {
+    peopleCount = 0
+    return Promise.resolve()
+  }
+  return People.remove({})
 }
