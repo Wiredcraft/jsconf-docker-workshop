@@ -7,8 +7,9 @@ services:
       - '27017:27017'
   profile:
     build: ./mocks/profile
+    container_name: 'jsconf-user-profile'
     ports:
-      - "3003:3003"
+      - "3007:3007"
     volumes:
       - './mocks/profile/src:/opt/work/profile/'
     working_dir: '/opt/work/profile'
