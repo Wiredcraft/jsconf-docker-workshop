@@ -7,4 +7,4 @@ exports.dbHost = process.env.DB_HOST
 exports.db = process.env.DB
 exports.dbPort = parseInt(process.env.DB_PORT, 10) || 27017
 
-exports.profileService = process.env.PROFILE || 'http://127.0.0.1:3003'
+exports.profileService = process.env.PROFILE || 'http://127.0.0.1:3007'
