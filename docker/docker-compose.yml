@@ -1,0 +1,18 @@
+version: '2'
+services:
+  mongo:
+    image: 'mongo'
+    container_name: 'mongo-ws'
+    ports:
+      - '27017:27017'
+  profile:
+    build: ./mocks/profile
+    ports:
+      - "3003:3003"
+    volumes:
+      - './mocks/profile/src:/opt/work/profile/'
+    working_dir: '/opt/work/profile'
+    command: npm start
+    
+
+
