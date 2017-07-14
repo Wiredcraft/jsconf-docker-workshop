@@ -1,0 +1,21 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - mongodb
+    command: node /app
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DB_HOST=mongodb
+      - DB=test
+  mongodb:
+    image: "mongo:latest"
+    ports:
+      - "27017:27017"

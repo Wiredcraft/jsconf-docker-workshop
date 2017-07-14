@@ -1,0 +1,8 @@
+!.gitignore
+.dockerignore
+
+*.DS_Store*
+*.log
+*.orig
+
+node_modules/

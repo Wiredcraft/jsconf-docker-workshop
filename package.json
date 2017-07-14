@@ -1,0 +1,29 @@
+{
+  "name": "jsconf-docker-workshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Wiredcraft/jsconf-docker-workshop.git"
+  },
+  "author": "Wiredcraft",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Wiredcraft/jsconf-docker-workshop/issues"
+  },
+  "homepage": "https://github.com/Wiredcraft/jsconf-docker-workshop#readme",
+  "engines": {
+    "node": ">6.10.3"
+  },
+  "scripts": {
+    "start": "nodemon ."
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "mongoose": "^4.11.2"
+  }
+}
