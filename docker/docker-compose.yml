@@ -1,8 +1,8 @@
-version: '2'
+version: '3'
 services:
-  mongo:
-    image: 'mongo'
-    container_name: 'mongo-ws'
+  mongodb:
+    image: 'mongo:latest'
+    container_name: 'jsconf-app-mongo'
     ports:
       - '27017:27017'
   profile:
