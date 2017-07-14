@@ -21,7 +21,6 @@ if (dbHost && db) {
 // Static files
 app.use('/public', express.static(path.join(__dirname, './static')))
 // Routes
-
 app.use('/people/count', (req, res) => {
   const People = (dbHost && db) ? mongoose.model('People') : undefined
   switch (req.method) {
