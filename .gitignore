@@ -6,3 +6,4 @@
 *.orig
 
 node_modules/
+data/mongodb

@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web-app:
+    build: .
+    container_name: jscon-app-compose
+    ports:
+      - "3003:3000"
+    depends_on:
+      - mongodb
+    command: npm run start
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+      - DB_HOST=mongodb
+      - DB=test
+    networks:
+      jsconf-app:
+    restart: always
+  mongodb:
+    image: mongo:latest
+    container_name: jsconf-app-mongo
+    volumes:
+      - ./data/mongodb:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      jsconf-app:
+    restart: always
+
+networks:
+  jsconf-app:
+    external:
+      name: jsconf-app-network
