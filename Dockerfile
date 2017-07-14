@@ -1,11 +1,14 @@
 FROM node:6.11
+
+WORKDIR /app
+
 RUN npm config set registry https://registry.npm.taobao.org
 
-RUN mkdir /app
-WORKDIR /app
+COPY package.json /app
+RUN npm install
 
 COPY . /app
 
 EXPOSE 3000
 
-RUN npm install
+#CMD npm run start
