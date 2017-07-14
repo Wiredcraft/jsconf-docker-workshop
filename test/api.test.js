@@ -7,7 +7,7 @@ const PplModel = require('../src/models/people')
 
 describe('People counter', () => {
   before('flush model', () => {
-    return PplModel.removeAll()
+    return PplModel.reset()
   });
   it('should get 0', () => {
     return request(server)
@@ -21,6 +21,7 @@ describe('People counter', () => {
   it('should be able to add', () => {
     return request(server)
       .post('/people/count')
+      .send({ name: 'alice' })
       .expect(200)
       .then(res => {
         return request(server)
@@ -31,5 +32,14 @@ describe('People counter', () => {
           });
       });
   });
+
+  it('should not be able to add bad guy', () => {
+    return request(server)
+      .post('/people/count')
+      .send({
+        name: 'bob' //bob is bad guy
+      })
+      .expect(403)
+  })
 });
 
