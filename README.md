@@ -15,5 +15,4 @@
 
 ## How to start
 
-* local: `$ npm start`
-* docker: `$ docker-compose up`
+* `$ npm start`
