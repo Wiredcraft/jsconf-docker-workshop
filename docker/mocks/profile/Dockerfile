@@ -1,4 +1,4 @@
-FROM node:6
+FROM node:alpine
 
 # Create app directory
 RUN mkdir -p /opt/work/profile
