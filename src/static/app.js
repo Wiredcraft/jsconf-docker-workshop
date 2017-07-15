@@ -7,15 +7,18 @@ $(document).ready(() => {
   })
 
   $('#button').on('click', () => {
-    const name = $('#nameInput').val()
+    var name = $('#nameInput').val()
     $.ajax({
       url: '/people/count',
       method: 'POST',
+      contentType: 'application/json',
       dataType: 'json',
-      data: { name },
+      data: JSON.stringify({ name: name }),
       success: (res) => {
         $('#count').text(res.count)
       }
+    }).fail((err) => {
+      alert(err.status + ' ' + err.statusText)
     })
   })
 })
