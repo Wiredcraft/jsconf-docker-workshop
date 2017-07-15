@@ -9,10 +9,10 @@
 * Express
 * MongoDB (mongoose)
 
-## TODO
-
-* init date in mongodb
-
 ## How to start
 
 * `$ npm start`
+
+## Test
+
+* `$ npm run test`
