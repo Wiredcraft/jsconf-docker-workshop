@@ -13,7 +13,5 @@ services:
     volumes:
       - './mocks/profile/src:/opt/work/profile/'
     working_dir: '/opt/work/profile'
-    command: npm start
-    
-
+    command: nodemon app.js
 
