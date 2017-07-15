@@ -1,4 +1,4 @@
-FROM node:8.0.0
+FROM node:alpine
 
 # Set npm registry
 RUN npm config set registry https://registry.npm.taobao.org
@@ -11,7 +11,7 @@ WORKDIR /usr/src/app
 COPY package.json /usr/src/app
 RUN npm install
 
-# Copu source code
+# Copy source code
 COPY . /usr/src/app
 
 EXPOSE 3000
