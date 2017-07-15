@@ -12,6 +12,7 @@ RUN npm install
 RUN mv ./node_modules ../node_modules
 
 RUN npm install -g nodemon
+
 COPY ./src/ ./
 
 EXPOSE 3007

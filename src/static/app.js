@@ -7,11 +7,12 @@ $(document).ready(() => {
   })
 
   $('#button').on('click', () => {
+    const name = $('#nameInput').val()
     $.ajax({
       url: '/people/count',
       method: 'POST',
       dataType: 'json',
-      data: { name: 'oliver' },
+      data: { name },
       success: (res) => {
         $('#count').text(res.count)
       }

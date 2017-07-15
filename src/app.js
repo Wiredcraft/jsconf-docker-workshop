@@ -18,7 +18,6 @@ app.use(bodyParser.json())
 // Static files
 app.use('/public', express.static(path.join(__dirname, './static')))
 // Routes
-
 app.use('/people/count', (req, res) => {
   switch (req.method) {
     case 'GET':
